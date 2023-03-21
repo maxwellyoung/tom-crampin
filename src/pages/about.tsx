@@ -1,15 +1,15 @@
-// create a responsive about page with little text headers on the left and larger body text on the right side of the page
-
 import Link from "next/link";
 
 export default function About() {
   return (
     <>
       <div className="flex min-h-screen flex-col justify-center bg-white py-4 pt-28 text-black">
-        <main className="flex flex-1 flex-row justify-center px-40  ">
+        <main className="flex flex-1 flex-row justify-center px-10 sm:px-40  ">
           <div className="text-left">
-            <div className="mt-16 flex  flex-row justify-between">
-              <p className="white mt-3 w-3/12 text-xl">So, who are you?</p>
+            <div className="mt-16 flex justify-between">
+              <p className="white text-md mt-3 w-3/12 sm:text-xl">
+                So, who are you?
+              </p>
               <p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
                 Hello, <br />
                 <br />I am a Motion Designer from Auckland, New Zealand telling
@@ -17,15 +17,19 @@ export default function About() {
                 other mediums. <br />
                 <br />
                 Cheers, <br />
+                <br />
                 Tom Crampin.
                 <hr className="mt-28 h-px border-0 bg-gray-200 dark:bg-gray-700" />
               </p>
             </div>
 
             <div className="mt-16 flex justify-between">
-              <p className="white mt-3 w-3/12 text-xl">What do you do?</p>
+              <p className="white text-md mt-3 w-3/12 sm:text-xl">
+                What do you do?
+              </p>
               <p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
-                Motion Graphics <br />
+                Motion Graphics
+                <br />
                 Product Renders
                 <br />
                 Sound Design
@@ -34,7 +38,7 @@ export default function About() {
             </div>
 
             <div className="mt-16 flex justify-between">
-              <p className="white mt-3 w-3/12 text-xl">
+              <p className="white text-md mt-3 w-3/12 sm:text-xl">
                 What do you do with it?
               </p>
               <p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
@@ -55,10 +59,12 @@ export default function About() {
               </p>
             </div>
             <div className="mt-16 flex justify-between">
-              <p className="white mt-3 w-3/12  text-xl">Don&apos;t be shy</p>
+              <p className="white text-md mt-3 w-3/12 sm:text-xl">
+                Don&apos;t be shy
+              </p>
               <div className="w-9/12 ">
                 <Link
-                  className="white mt-3 text-3xl sm:text-6xl"
+                  className="white mt-3 text-xl sm:text-6xl"
                   href="mailto:tom@tomcrampin.com"
                 >
                   tom@tomcrampin.com

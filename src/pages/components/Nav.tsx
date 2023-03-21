@@ -10,7 +10,7 @@ export default function Nav() {
 
   return (
     <nav>
-      <div className="fixed flex w-full items-center justify-between px-6 py-6 sm:py-12 sm:px-20">
+      <div className="fixed flex w-full  items-center justify-between px-6 py-6 sm:py-12 sm:px-20">
         <Link href={"/"}>
           <Image
             className="z-10"
@@ -70,21 +70,21 @@ export default function Nav() {
           <div className="flex h-screen flex-col justify-center p-4 sm:p-24">
             <Link
               href="/work"
-              className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
+              className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
               onClick={() => openModal(!modal)}
             >
               work
             </Link>
             <Link
               href="/about"
-              className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
+              className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
               onClick={() => openModal(!modal)}
             >
               about
             </Link>
             <Link
               href="mailto:tom@tomcrampin.com"
-              className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
+              className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
               onClick={() => openModal(!modal)}
             >
               contact
