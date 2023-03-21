@@ -7,7 +7,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Tom Crampin</title>
         <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.svg" />
       </Head>
       <main className="fixed inset-0 z-[-1]">
         <video
