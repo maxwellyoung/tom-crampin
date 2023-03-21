@@ -48,7 +48,7 @@ export default function Nav() {
             exit={{ opacity: 0 }}
             className="modal fixed  z-50 h-screen w-screen items-start justify-end gap-4 bg-black  text-left"
           >
-            <div className="-inset-10 mr-8 ml-auto -mt-8 flex justify-end sm:-mt-2 sm:mr-20">
+            <div className="-inset-10 mr-6 ml-auto -mt-8 flex justify-end sm:-mt-2 sm:mr-20">
               <button
                 className=" group flex h-40 w-40 flex-col items-end justify-center"
                 onClick={() => openModal(!modal)}
