@@ -13,13 +13,15 @@ export default function Nav() {
     <nav>
       <div className="fixed flex w-full  items-center justify-between px-6 py-6 sm:py-12 sm:px-20">
         <Link href={"/"}>
-          <Image
-            className="z-10"
-            src="/logo.svg"
-            width={200}
-            height={200}
-            alt="tom crampin logo"
-          />
+          <motion.div whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.03 }}>
+            <Image
+              className="z-10"
+              src="/logo.svg"
+              width={200}
+              height={200}
+              alt="tom crampin logo"
+            />
+          </motion.div>
         </Link>
         <button
           className="group ml-auto flex h-12 w-12 flex-col items-end justify-center"
@@ -39,7 +41,7 @@ export default function Nav() {
           />
         </button>
       </div>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {modal && (
           <motion.div
             key="modal"
@@ -75,13 +77,15 @@ export default function Nav() {
               </button>
             </div>
             <div className="flex h-screen flex-col justify-center p-4 sm:p-24">
-              <Link
-                href="/work"
-                className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
-                onClick={() => openModal(!modal)}
-              >
-                work
-              </Link>
+              <motion.div>
+                <Link
+                  href="/work"
+                  className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
+                  onClick={() => openModal(!modal)}
+                >
+                  work
+                </Link>
+              </motion.div>
               <Link
                 href="/about"
                 className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
