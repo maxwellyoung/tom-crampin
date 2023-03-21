@@ -1,6 +1,9 @@
 import Head from "next/head";
+import { useState } from "react";
 
-export default function reel() {
+export default function Work() {
+  const [unmute, setUnmute] = useState(false);
+
   return (
     <div>
       <Head>
@@ -15,7 +18,9 @@ export default function reel() {
             src="/tom_crampin_motion_reel_2023.mp4"
             loop
             preload="true"
+            muted={unmute ? false : true}
             autoPlay
+            onClick={() => setUnmute(!unmute)}
           />
         </div>
       </main>
