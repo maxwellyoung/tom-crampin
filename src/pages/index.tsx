@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           </div>
         )}
         <video
-          className="h-full w-full object-cover"
+          className="h-full w-full bg-white object-cover"
           src="/toms_desk.mp4"
           loop
           preload="eager"

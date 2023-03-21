@@ -18,7 +18,7 @@ export default function Work() {
       </Head>
       <main>
         {loading && (
-          <div className="loading-spinner align-center absolute flex justify-center">
+          <div className="loading-spinner align-center absolute flex justify-center bg-white">
             <p>Loading...</p>
           </div>
         )}
