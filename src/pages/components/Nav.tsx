@@ -37,13 +37,6 @@ export default function Nav() {
                 modal ? "opacity-0" : "opacity-50 group-hover:opacity-100"
               }`}
             />
-            <div
-              className={`${genericHamburgerLineClosed} ${
-                modal
-                  ? "-translate-y-3 -rotate-45 opacity-50 group-hover:opacity-100"
-                  : "opacity-50 group-hover:opacity-100"
-              }`}
-            />
           </button>
         </div>
       </div>
