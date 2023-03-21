@@ -15,8 +15,8 @@ export default function About() {
                 <br />I am a Motion Designer from Auckland, New Zealand telling
                 stories and building character through animation, sound, and
                 other mediums. <br />
-                Cheers, <br />
                 <br />
+                Cheers, <br />
                 Tom Crampin.
                 <hr className="mt-28 h-px border-0 bg-gray-200 dark:bg-gray-700" />
               </p>
