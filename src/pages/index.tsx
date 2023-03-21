@@ -1,7 +1,14 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleLoad = () => {
+    setLoading(false);
+  };
+
   return (
     <>
       <Head>
@@ -9,14 +16,19 @@ const Home: NextPage = () => {
         <meta name="description" content="" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <main className="fixed inset-0 z-[-1]">
+      <main className="absolute inset-0 z-[-1]">
+        {loading && (
+          <div className="loading-spinner align-center absolute flex justify-center">
+            <p>Loading...</p>
+          </div>
+        )}
         <video
           className="h-full w-full object-cover"
           src="/toms_desk.mp4"
           loop
-          muted
-          preload="true"
+          preload="eager"
           autoPlay
+          onLoadedData={handleLoad}
         />
       </main>
     </>
