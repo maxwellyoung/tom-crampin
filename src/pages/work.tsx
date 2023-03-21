@@ -8,7 +8,7 @@ export default function reel() {
       <Head>
         <title>Tom Crampin</title>
         <meta name="description" content="Descriptions" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.svg" />
         {/* <script
 					src="https://kit.fontawesome.com/7e9f3d367c.js"
 					crossOrigin="anonymous"
@@ -18,7 +18,7 @@ export default function reel() {
         <div className="bg-video-wrap fixed inset-0 z-[-1]">
           <video
             className="h-full w-full object-cover"
-            src="/TomCrampin_MotionReel1.mp4"
+            src="/tom_crampin_motion_reel_2023.mp4"
             loop
             preload="true"
             autoPlay
