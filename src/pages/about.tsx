@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
+import Head from "next/head";
 
 export default function About() {
   return (
     <>
+      <Head>
+        <title>Tom Crampin</title>
+        <meta name="description" content="Tom Crampin Website" />
+        <link rel="icon" href="/logo.svg" />
+      </Head>
       <div className="flex min-h-screen flex-col justify-center bg-white py-4 pt-28 text-black">
         <main className="flex flex-1 flex-row justify-center px-10 sm:px-40  ">
           <div className="text-left">

@@ -13,7 +13,7 @@ export default function Work() {
     <div>
       <Head>
         <title>Tom Crampin</title>
-        <meta name="description" content="Descriptions" />
+        <meta name="description" content="Tom Crampin Website" />
         <link rel="icon" href="/logo.svg" />
       </Head>
       <main>
