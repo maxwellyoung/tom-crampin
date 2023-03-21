@@ -20,7 +20,6 @@ export default function reel() {
             className="h-full w-full object-cover"
             src="/TomCrampin_MotionReel1.mp4"
             loop
-            muted
             preload="true"
             autoPlay
           ></video>

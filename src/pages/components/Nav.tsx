@@ -10,13 +10,13 @@ export default function Nav() {
 
   return (
     <nav>
-      <div className="fixed flex w-full items-center justify-between p-8">
+      <div className="fixed flex w-full items-center justify-between px-6 py-6 sm:py-12 sm:px-20">
         <Link href={"/"}>
           <Image
             className="z-10"
             src="/logo.svg"
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             alt="tom crampin logo"
           />
         </Link>
@@ -76,21 +76,21 @@ export default function Nav() {
           </button>
           <Link
             href="/work"
-            className="text-9xl font-bold text-[#3A3A3A] hover:text-white"
+            className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
             onClick={() => openModal(!modal)}
           >
             work
           </Link>
           <Link
             href="/about"
-            className="text-9xl font-bold text-[#3A3A3A] hover:text-white"
+            className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
             onClick={() => openModal(!modal)}
           >
             about
           </Link>
           <Link
             href="mailto:tom@tomcrampin.com"
-            className="text-9xl font-bold text-[#3A3A3A] hover:text-white"
+            className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
             onClick={() => openModal(!modal)}
           >
             contact
