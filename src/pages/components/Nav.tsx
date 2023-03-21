@@ -67,7 +67,7 @@ export default function Nav() {
               />
             </button>
           </div>
-          <div className="flex flex-col p-12 sm:p-24">
+          <div className="flex h-screen flex-col justify-center p-4 sm:p-24">
             <Link
               href="/work"
               className="text-8xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
