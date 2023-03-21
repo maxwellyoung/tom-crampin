@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function About() {
@@ -42,19 +43,54 @@ export default function About() {
                 What do you do with it?
               </p>
               <p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
-                Milk
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://milk.co.nz/"
+                >
+                  Milk
+                </motion.a>
                 <br />
-                Designworks
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://designworks.com/"
+                >
+                  Designworks
+                </motion.a>
                 <br />
-                Studio South
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://www.studiosouth.co.nz/"
+                >
+                  Studio South
+                </motion.a>
                 <br />
-                McCarthy Studio
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://www.mccarthy.studio/"
+                >
+                  McCarthy Studio
+                </motion.a>
                 <br />
-                Likeminds
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://www.hellolikeminds.co.nz/"
+                >
+                  Likeminds
+                </motion.a>
                 <br />
-                HeyYou Sussudio
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://sussudio.co.nz/"
+                >
+                  HeyYou Sussudio
+                </motion.a>
                 <br />
-                WorkGroup
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
+                  href="https://www.workgroupstudio.com/"
+                >
+                  WorkGroup
+                </motion.a>
                 <hr className="mt-28 h-px border-0 bg-gray-200 dark:bg-gray-700" />
               </p>
             </div>
@@ -63,19 +99,21 @@ export default function About() {
                 Don&apos;t be shy
               </p>
               <div className="w-9/12 ">
-                <Link
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
                   className="white mt-3 text-xl sm:text-6xl"
                   href="mailto:tom@tomcrampin.com"
                 >
                   tom@tomcrampin.com
-                </Link>
+                </motion.a>
                 <br />
-                <Link
+                <motion.a
+                  whileHover={{ opacity: 0.3 }}
                   className="white mt-3 pb-28 text-3xl sm:text-6xl"
                   href="https://www.instagram.com/tomcrampin/"
                 >
                   Instagram
-                </Link>
+                </motion.a>
               </div>
             </div>
           </div>
