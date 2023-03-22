@@ -80,7 +80,7 @@ export default function Nav() {
               <motion.div>
                 <Link
                   href="/work"
-                  className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl "
+                  className="text-7xl font-bold text-[#3A3A3A] duration-700 hover:text-white sm:text-9xl "
                   onClick={() => openModal(!modal)}
                 >
                   work
@@ -88,14 +88,14 @@ export default function Nav() {
               </motion.div>
               <Link
                 href="/about"
-                className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
+                className="text-7xl font-bold text-[#3A3A3A] duration-700 hover:text-white sm:text-9xl"
                 onClick={() => openModal(!modal)}
               >
                 about
               </Link>
               <Link
                 href="mailto:tom@tomcrampin.com"
-                className="text-7xl font-bold text-[#3A3A3A] hover:text-white sm:text-9xl"
+                className="text-7xl font-bold text-[#3A3A3A] duration-700 hover:text-white sm:text-9xl"
                 onClick={() => openModal(!modal)}
               >
                 contact

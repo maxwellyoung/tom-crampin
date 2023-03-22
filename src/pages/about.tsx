@@ -12,7 +12,11 @@ export default function About() {
       <div className="flex min-h-screen flex-col justify-center bg-white py-4 pt-28 text-black">
         <main className="flex flex-1 flex-row justify-center px-10 sm:px-40  ">
           <div className="text-left">
-            <div className="mt-16 flex justify-between">
+            <motion.div
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="mt-16 flex justify-between"
+            >
               <p className="white text-md mt-3 w-3/12 sm:text-xl">
                 So, who are you?
               </p>
@@ -27,7 +31,7 @@ export default function About() {
                 Tom Crampin.
                 <hr className="mt-28 h-px border-0 bg-gray-200 dark:bg-gray-700" />
               </p>
-            </div>
+            </motion.div>
 
             <div className="mt-16 flex justify-between">
               <p className="white text-md mt-3 w-3/12 sm:text-xl">
