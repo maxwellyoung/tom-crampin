@@ -5,6 +5,7 @@ export default function Work() {
   const [unmute, setUnmute] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showUnmuteMessage, setShowUnmuteMessage] = useState(false);
+  const [showMuteMessage, setShowMuteMessage] = useState(false);
 
   const handleLoad = () => {
     setLoading(false);
@@ -19,22 +20,19 @@ export default function Work() {
   }, []);
 
   useEffect(() => {
-    if (!showUnmuteMessage) {
-      return;
+    if (showMuteMessage) {
+      const timer = setTimeout(() => {
+        setShowMuteMessage(false);
+      }, 1000);
+
+      return () => clearTimeout(timer);
     }
-
-    const timer = setTimeout(() => {
-      setShowUnmuteMessage(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [showUnmuteMessage]);
+  }, [showMuteMessage]);
 
   return (
     <div>
       <AnimatePresence>
-        {/* rest of your code */}
-        {showUnmuteMessage && (
+        {showUnmuteMessage && !showMuteMessage && (
           <motion.div
             className="fixed inset-0 z-50 mt-16 flex items-start justify-center"
             initial={{ opacity: 0 }}
@@ -44,8 +42,23 @@ export default function Work() {
             onAnimationComplete={() => setShowUnmuteMessage(false)}
             style={{ pointerEvents: "none" }}
           >
-            <p className=" text-4xl font-bold tracking-wider text-black  ">
+            <p className=" text-4xl font-bold tracking-wider text-black">
               Click to unmute
+            </p>
+          </motion.div>
+        )}
+        {showMuteMessage && (
+          <motion.div
+            className="fixed inset-0 z-50 mt-16 flex items-start justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            onAnimationComplete={() => setShowMuteMessage(false)}
+            style={{ pointerEvents: "none" }}
+          >
+            <p className=" text-4xl font-bold tracking-wider text-black">
+              {unmute ? "Unmuted" : "Muted"}
             </p>
           </motion.div>
         )}
@@ -66,7 +79,10 @@ export default function Work() {
             muted={unmute ? false : true}
             autoPlay
             onLoadedData={handleLoad}
-            onClick={() => setUnmute(!unmute)}
+            onClick={() => {
+              setUnmute(!unmute);
+              setShowMuteMessage(true);
+            }}
           />
         </div>
       </main>
