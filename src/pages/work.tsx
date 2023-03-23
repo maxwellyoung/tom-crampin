@@ -34,7 +34,7 @@ export default function Work() {
       <AnimatePresence>
         {showUnmuteMessage && !showMuteMessage && (
           <motion.div
-            className="fixed inset-0 z-50 mt-16 flex items-start justify-center"
+            className="fixed inset-0 z-50 mt-16 flex items-end justify-center sm:items-start"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -42,14 +42,14 @@ export default function Work() {
             onAnimationComplete={() => setShowUnmuteMessage(false)}
             style={{ pointerEvents: "none" }}
           >
-            <p className=" text-4xl font-bold tracking-wider text-black">
+            <p className="text-2xl font-bold tracking-wider text-black sm:text-4xl">
               Click to unmute
             </p>
           </motion.div>
         )}
         {showMuteMessage && (
           <motion.div
-            className="fixed inset-0 z-50 mt-16 flex items-start justify-center"
+            className="fixed inset-0 z-50 mt-16 flex items-end justify-center sm:items-start"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -57,7 +57,7 @@ export default function Work() {
             onAnimationComplete={() => setShowMuteMessage(false)}
             style={{ pointerEvents: "none" }}
           >
-            <p className=" text-4xl font-bold tracking-wider text-black">
+            <p className="text-2xl font-bold tracking-wider text-black sm:text-4xl">
               {unmute ? "Unmuted" : "Muted"}
             </p>
           </motion.div>
