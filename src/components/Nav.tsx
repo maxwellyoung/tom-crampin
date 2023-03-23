@@ -1,16 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, useScroll, motion } from "framer-motion";
 
 export default function Nav() {
   const [modal, openModal] = useState(false);
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+  function hideNav() {
+    if (scrollY.get() > scrollY.getPrevious()) {
+      // Scrolling up, show the navigation bar
+      setHidden(true);
+    } else {
+      // Scrolling down, hide the navigation bar
+      setHidden(false);
+    }
+  }
+
+  useEffect(() => {
+    return scrollY.onChange(() => hideNav());
+  });
 
   const genericHamburgerLineClosed = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`;
   const genericHamburgerLineOpen = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
 
   return (
-    <nav>
+    <motion.nav
+      animate={{ opacity: hidden ? 0 : 1 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="fixed flex w-full  items-center justify-between px-6 py-6 sm:py-12 sm:px-20">
         <Link href={"/"}>
           <motion.div whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.03 }}>
@@ -104,6 +122,6 @@ export default function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
