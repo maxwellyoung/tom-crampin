@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Nav from "~/components/Nav";
 
 export default function Work() {
   const [unmute, setUnmute] = useState(false);
@@ -30,62 +31,65 @@ export default function Work() {
   }, [showMuteMessage]);
 
   return (
-    <div>
-      <AnimatePresence>
-        {showUnmuteMessage && !showMuteMessage && (
-          <motion.div
-            className="fixed inset-0 z-50 mt-16 flex items-end justify-center sm:items-start"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            onAnimationComplete={() => setShowUnmuteMessage(false)}
-            style={{ pointerEvents: "none" }}
-          >
-            <p className="text-2xl font-bold tracking-wider text-black sm:text-4xl">
-              Click to unmute
-            </p>
-          </motion.div>
-        )}
-        {showMuteMessage && (
-          <motion.div
-            className="fixed inset-0 z-50 mt-16 flex items-end justify-center sm:items-start"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            onAnimationComplete={() => setShowMuteMessage(false)}
-            style={{ pointerEvents: "none" }}
-          >
-            <p className="text-2xl font-bold tracking-wider text-black sm:text-4xl">
-              {unmute ? "Unmuted" : "Muted"}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <>
+      <div>
+        <AnimatePresence>
+          {showUnmuteMessage && !showMuteMessage && (
+            <motion.div
+              className="fixed inset-0 z-50 mt-16 mr-32 flex items-end justify-end sm:items-start"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, x: 12 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2 }}
+              onAnimationComplete={() => setShowUnmuteMessage(false)}
+              style={{ pointerEvents: "none" }}
+            >
+              <p className="sm:text-md text-sm font-bold tracking-wider text-black">
+                click to unmute
+              </p>
+            </motion.div>
+          )}
+          {showMuteMessage && (
+            <motion.div
+              className="fixed inset-0 z-50 mt-16 mr-32 flex items-end justify-end sm:items-start"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              onAnimationComplete={() => setShowMuteMessage(false)}
+              style={{ pointerEvents: "none" }}
+            >
+              <p className="sm:text-md text-sm font-bold tracking-wider text-black">
+                {unmute ? "unmuted" : "muted"}
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-      <main>
-        {loading && (
-          <div className="loading-spinner align-center absolute flex justify-center bg-white">
-            <p>Loading...</p>
+        <main>
+          <Nav logoColor="black" />
+          {loading && (
+            <div className="loading-spinner align-center absolute flex justify-center bg-white">
+              <p>Loading...</p>
+            </div>
+          )}
+          <div className="bg-video-wrap absolute inset-0 z-[-1]">
+            <video
+              className="h-full w-full object-cover"
+              src="/tom_crampin_motion_reel_2023.mp4"
+              loop
+              preload="eager"
+              muted={unmute ? false : true}
+              autoPlay
+              onLoadedData={handleLoad}
+              onClick={() => {
+                setUnmute(!unmute);
+                setShowMuteMessage(true);
+              }}
+            />
           </div>
-        )}
-        <div className="bg-video-wrap absolute inset-0 z-[-1]">
-          <video
-            className="h-full w-full object-cover"
-            src="/tom_crampin_motion_reel_2023.mp4"
-            loop
-            preload="eager"
-            muted={unmute ? false : true}
-            autoPlay
-            onLoadedData={handleLoad}
-            onClick={() => {
-              setUnmute(!unmute);
-              setShowMuteMessage(true);
-            }}
-          />
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 }

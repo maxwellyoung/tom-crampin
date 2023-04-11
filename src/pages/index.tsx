@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Nav from "~/components/Nav";
 
 const Home: NextPage = () => {
   return (
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Tom Crampin Website" />
         <link rel="icon" href="/logo.svg" />
       </Head>
+      <Nav logoColor="white" />
       <main className="absolute inset-0 z-[-1]">
         <video
           className="h-full w-full bg-white object-cover"

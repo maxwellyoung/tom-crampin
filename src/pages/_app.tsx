@@ -8,11 +8,9 @@ const ppMori = localFont({ src: "../../src/assets/PPMori-Regular.otf" });
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <main className={ppMori.className}>
-      <Layout>
-        <AnimatePresence mode="wait">
-          <Component {...pageProps} />
-        </AnimatePresence>
-      </Layout>
+      <AnimatePresence mode="wait">
+        <Component {...pageProps} />
+      </AnimatePresence>
     </main>
   );
 };

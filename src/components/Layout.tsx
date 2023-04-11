@@ -1,12 +1,19 @@
-import React, { type PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import Nav from "./Nav";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-const Layout = ({ children }: PropsWithChildren) => {
+interface LayoutProps {
+  children: PropsWithChildren<any>;
+}
+
+const Layout = (props: LayoutProps) => {
+  const { children } = props;
+
   return (
-    <>
-      <Nav />
+    <div>
       <div>{children}</div>
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
+import Layout from "~/components/Layout";
+import Nav from "~/components/Nav";
 
 export default function About() {
   return (
@@ -9,6 +11,7 @@ export default function About() {
         <meta name="description" content="Tom Crampin Website" />
         <link rel="icon" href="/logo.svg" />
       </Head>
+      <Nav logoColor="black" />
       <div className="flex min-h-screen flex-col justify-center bg-white py-4 pt-28 text-black">
         <main className="flex flex-1 flex-row justify-center px-10 sm:px-40  ">
           <div className="text-left">
@@ -27,7 +30,6 @@ export default function About() {
                 other mediums. <br />
                 <br />
                 Cheers, <br />
-                <br />
                 Tom Crampin.
                 <hr className="mt-28 h-px border-0 bg-gray-200 dark:bg-gray-700" />
               </p>
@@ -53,49 +55,58 @@ export default function About() {
               </p>
               <p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{ textDecoration: "line-through" }}
                   href="https://milk.co.nz/"
                 >
                   Milk
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{ textDecoration: "line-through" }}
                   href="https://designworks.com/"
                 >
                   Designworks
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{ textDecoration: "line-through" }}
                   href="https://www.studiosouth.co.nz/"
                 >
                   Studio South
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{ textDecoration: "line-through" }}
                   href="https://www.mccarthy.studio/"
                 >
                   McCarthy Studio
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{ textDecoration: "line-through" }}
                   href="https://www.hellolikeminds.co.nz/"
                 >
                   Likeminds
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
-                  href="https://sussudio.co.nz/"
+                  whileHover={{ textDecoration: "line-through" }}
+                  href="https://heyyou.co/"
                 >
-                  HeyYou Sussudio
+                  HeyYou
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{
+                    textDecoration: "line-through",
+                  }}
+                  href="https://sussudio.co.nz/"
+                >
+                  Sussudio
+                </motion.a>
+                <br />
+                <motion.a
+                  whileHover={{ textDecoration: "line-through" }}
                   href="https://www.workgroupstudio.com/"
                 >
                   WorkGroup
