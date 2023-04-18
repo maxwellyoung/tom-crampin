@@ -1,9 +1,24 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, useScroll, motion } from "framer-motion";
+import { useRouter } from "next/router";
 
-function Logo(props: { color: any }) {
-  const { color } = props;
+function Logo() {
+  const router = useRouter();
+  const [color, setColor] = useState("#000000");
+
+  useEffect(() => {
+    if (
+      router.pathname === "/" ||
+      router.pathname === "/foo" ||
+      router.pathname === "/bar"
+    ) {
+      setColor("#FFFFFF");
+    } else {
+      setColor("#000000");
+    }
+  }, [router.pathname]);
+
   return (
     <Link href={"/"}>
       <motion.div whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.03 }}>
@@ -28,16 +43,13 @@ function Logo(props: { color: any }) {
     </Link>
   );
 }
-interface NavProps {
-  logoColor: string;
-  children?: React.ReactNode;
-}
 
-export default function Nav(props: NavProps) {
-  const { logoColor } = props;
+export default function Nav() {
+  const [color, setColor] = useState("#000000");
   const [modal, openModal] = useState(false);
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
+
   function hideNav() {
     if (scrollY.get() > scrollY.getPrevious()) {
       // Scrolling up, show the navigation bar
@@ -52,70 +64,89 @@ export default function Nav(props: NavProps) {
     return scrollY.onChange(() => hideNav());
   });
 
-  const genericHamburgerLineClosed = `h-1 w-6 my-1 bg-black transition ease transform duration-300`;
-  const genericHamburgerLineOpen = `h-1 w-6 my-1 bg-white transition ease transform duration-300`;
+  const router = useRouter();
+  useEffect(() => {
+    if (
+      router.pathname === "/" ||
+      router.pathname === "/foo" ||
+      router.pathname === "/bar"
+    ) {
+      setColor("#FFFFFF");
+    } else {
+      setColor("#000000");
+    }
+  }, [router.pathname]);
+
+  const handleModalColor = () => {
+    setColor((prevColor) => (prevColor === "#000000" ? "#FFFFFF" : "#000000")); // Toggle between white and black
+  };
+  console.log(color);
+
+  const genericHamburgerLineClosed = `h-1 w-6 my-1 opacity bg-${color} transition ease transform duration-300`;
+  const genericHamburgerLineOpen = `h-1 w-6 my-1 opacity bg-${color} transition ease transform duration-300`;
 
   return (
-    <motion.nav
-      animate={{ opacity: hidden ? 0 : 1 }}
-      transition={{ duration: 0.3 }}
-    >
-      <div className="fixed flex w-full  items-center justify-between px-6 py-6 sm:py-12 sm:px-20">
-        <Link href={"/"}>
-          <motion.div
-            className="z-50 w-64"
-            whileTap={{ scale: 0.97 }}
-            whileHover={{ scale: 1.03 }}
-          >
-            <Logo color={logoColor} />
-          </motion.div>
-        </Link>
-        <button
-          className="group ml-auto flex h-12 w-12 flex-col items-end justify-center"
-          onClick={() => openModal(!modal)}
+    <>
+      <Link href={"/"}>
+        <motion.div
+          className="fixed top-6 left-6 z-50 w-64"
+          whileTap={{ scale: 0.97 }}
+          whileHover={{ scale: 1.03 }}
         >
-          <div
-            className={`${genericHamburgerLineClosed} ${
-              modal
-                ? "translate-y-3 rotate-45 group-hover:opacity-100"
-                : " group-hover:opacity-100"
-            }`}
-          />
-          <div
-            className={`${genericHamburgerLineClosed} ${
-              modal ? "opacity-0" : " group-hover:opacity-100"
-            }`}
-          />
-        </button>
-      </div>
+          <Logo />
+        </motion.div>
+      </Link>
+      <motion.nav
+        className="fixed top-0 w-full"
+        animate={{ opacity: hidden ? 0 : 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex items-center justify-between px-6 py-6 sm:py-12 sm:px-20 ">
+          <button
+            className="group ml-auto flex h-12 w-12 flex-col items-end justify-center"
+            onClick={() => {
+              handleModalColor();
+              openModal(!modal);
+            }}
+          >
+            <div
+              style={{ backgroundColor: color }}
+              className={`${genericHamburgerLineClosed} ${
+                modal
+                  ? "translate-y-3 rotate-45 group-hover:opacity-100"
+                  : " group-hover:opacity-100"
+              }`}
+            />
+
+            <div
+              style={{ backgroundColor: color }}
+              className={`${genericHamburgerLineClosed} ${
+                modal ? "opacity-0" : " group-hover:opacity-100"
+              }`}
+            />
+          </button>
+        </div>
+      </motion.nav>
       <AnimatePresence mode="wait">
         {modal && (
-          <div className=" modal fixed h-screen w-screen bg-white p-6">
-            <div className="fixed flex w-full items-center justify-between">
-              <Link href={"/"}>
-                <motion.div
-                  className="z-50 w-64"
-                  whileTap={{ scale: 0.97 }}
-                  whileHover={{ scale: 1.03 }}
-                  onClick={() => openModal(!modal)}
-                >
-                  <Logo color="black" />
-                </motion.div>
-              </Link>
-            </div>
+          <div className="modal fixed h-screen w-screen bg-white ">
             <motion.div
               key="modal"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="z-10 items-start justify-end gap-4 text-left"
+              className="z-50 flex h-full w-full flex-col items-start justify-end gap-4 text-left"
             >
-              <div className="-inset-10 mr-6 ml-auto -mt-8 flex justify-end ">
+              <div className="sm:py- -inset-10 mr-6 ml-auto -mt-12 flex justify-end px-6 py-6 sm:px-8">
                 <button
                   className=" group flex h-40 w-40 flex-col items-end justify-center"
-                  onClick={() => openModal(!modal)}
+                  onClick={() => {
+                    handleModalColor();
+                    openModal(!modal);
+                  }}
                 >
                   <div
+                    style={{ backgroundColor: color }}
                     className={`${genericHamburgerLineOpen} ${
                       modal
                         ? "translate-y-3 rotate-45 group-hover:opacity-100"
@@ -123,11 +154,13 @@ export default function Nav(props: NavProps) {
                     }`}
                   />
                   <div
+                    style={{ backgroundColor: color }}
                     className={`${genericHamburgerLineOpen} ${
                       modal ? "opacity-0" : "group-hover:opacity-100"
                     }`}
                   />
                   <div
+                    style={{ backgroundColor: color }}
                     className={`${genericHamburgerLineOpen} ${
                       modal
                         ? "-translate-y-3 -rotate-45 group-hover:opacity-100"
@@ -136,7 +169,7 @@ export default function Nav(props: NavProps) {
                   />
                 </button>
               </div>
-              <div className="flex h-screen flex-col justify-end pb-28">
+              <div className="ml-24 flex h-screen flex-col justify-end">
                 <motion.div>
                   <Link
                     href="/work"
@@ -165,6 +198,6 @@ export default function Nav(props: NavProps) {
           </div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 }

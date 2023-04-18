@@ -67,7 +67,7 @@ export default function Work() {
         </AnimatePresence>
 
         <main>
-          <Nav logoColor="black" />
+          <Nav />
           {loading && (
             <div className="loading-spinner align-center absolute flex justify-center bg-white">
               <p>Loading...</p>
