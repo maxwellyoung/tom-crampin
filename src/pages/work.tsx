@@ -36,7 +36,7 @@ export default function Work() {
         <AnimatePresence>
           {showUnmuteMessage && !showMuteMessage && (
             <motion.div
-              className="fixed inset-0 z-50 mt-16 mr-32 flex items-end justify-end sm:items-start"
+              className="fixed inset-0 z-50 mt-16 mr-36 flex items-end justify-end sm:items-start"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, x: 12 }}
               exit={{ opacity: 0 }}

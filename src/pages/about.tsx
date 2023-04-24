@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
-import Layout from "~/components/Layout";
 import Nav from "~/components/Nav";
 
 export default function About() {
@@ -11,15 +10,11 @@ export default function About() {
         <meta name="description" content="Tom Crampin Website" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <Nav logoColor="black" />
+      <Nav />
       <div className="flex min-h-screen flex-col justify-center bg-white py-4 pt-28 text-black">
         <main className="flex flex-1 flex-row justify-center px-10 sm:px-40  ">
           <div className="text-left">
-            <motion.div
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="mt-16 flex justify-between"
-            >
+            <motion.div className="mt-16 flex justify-between">
               <p className="white text-md mt-3 w-3/12 sm:text-xl">
                 So, who are you?
               </p>

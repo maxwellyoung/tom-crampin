@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimatePresence, useScroll, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 function Logo() {
@@ -47,22 +47,22 @@ function Logo() {
 export default function Nav() {
   const [color, setColor] = useState("#000000");
   const [modal, openModal] = useState(false);
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
+  // const { scrollY } = useScroll();
+  // const [hidden, setHidden] = useState(false);
 
-  function hideNav() {
-    if (scrollY.get() > scrollY.getPrevious()) {
-      // Scrolling up, show the navigation bar
-      setHidden(true);
-    } else {
-      // Scrolling down, hide the navigation bar
-      setHidden(false);
-    }
-  }
+  // function hideNav() {
+  //   if (scrollY.get() > scrollY.getPrevious()) {
+  //     // Scrolling up, show the navigation bar
+  //     setHidden(true);
+  //   } else {
+  //     // Scrolling down, hide the navigation bar
+  //     setHidden(false);
+  //   }
+  // }
 
-  useEffect(() => {
-    return scrollY.onChange(() => hideNav());
-  });
+  // useEffect(() => {
+  //   return scrollY.onChange(() => hideNav());
+  // });
 
   const router = useRouter();
   useEffect(() => {
@@ -78,7 +78,10 @@ export default function Nav() {
   }, [router.pathname]);
 
   const handleModalColor = () => {
-    setColor((prevColor) => (prevColor === "#000000" ? "#FFFFFF" : "#000000")); // Toggle between white and black
+    if (router.pathname === "/")
+      setColor((prevColor) =>
+        prevColor === "#000000" ? "#FFFFFF" : "#000000"
+      ); // Toggle between white and black
   };
   console.log(color);
 
@@ -89,19 +92,15 @@ export default function Nav() {
     <>
       <Link href={"/"}>
         <motion.div
-          className="fixed top-6 left-6 z-50 w-64"
+          className="fixed z-50 w-64 sm:top-12 sm:left-20"
           whileTap={{ scale: 0.97 }}
           whileHover={{ scale: 1.03 }}
         >
           <Logo />
         </motion.div>
       </Link>
-      <motion.nav
-        className="fixed top-0 w-full"
-        animate={{ opacity: hidden ? 0 : 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="flex items-center justify-between px-6 py-6 sm:py-12 sm:px-20 ">
+      <motion.nav className="fixed top-0 w-full" transition={{ duration: 0.3 }}>
+        <div className="flex items-center justify-between px-6 py-6 sm:py-12 sm:px-24 ">
           <button
             className="group ml-auto flex h-12 w-12 flex-col items-end justify-center"
             onClick={() => {
@@ -129,7 +128,7 @@ export default function Nav() {
       </motion.nav>
       <AnimatePresence mode="wait">
         {modal && (
-          <div className="modal fixed h-screen w-screen bg-white ">
+          <div className="modal fixed h-screen w-screen overflow-y-auto overflow-x-hidden bg-white">
             <motion.div
               key="modal"
               initial={{ opacity: 0 }}
@@ -137,7 +136,7 @@ export default function Nav() {
               exit={{ opacity: 0 }}
               className="z-50 flex h-full w-full flex-col items-start justify-end gap-4 text-left"
             >
-              <div className="sm:py- -inset-10 mr-6 ml-auto -mt-12 flex justify-end px-6 py-6 sm:px-8">
+              <div className="-inset-10 mr-6 ml-auto -mt-12 flex justify-end px-6 py-6 sm:py-11 sm:px-20">
                 <button
                   className=" group flex h-40 w-40 flex-col items-end justify-center"
                   onClick={() => {
@@ -169,7 +168,7 @@ export default function Nav() {
                   />
                 </button>
               </div>
-              <div className="ml-24 flex h-screen flex-col justify-end">
+              <div className="ml-24 mb-4 flex h-screen flex-col justify-end">
                 <motion.div>
                   <Link
                     href="/work"
