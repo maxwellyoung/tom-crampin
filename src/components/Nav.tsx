@@ -120,7 +120,7 @@ export default function Nav() {
               exit={{ opacity: 0 }}
               className="z-50 flex h-full w-full flex-col items-start justify-end gap-4 text-left"
             >
-              <div className="-inset-10 mr-6 ml-auto -mt-12 flex justify-end px-6 py-6 sm:py-10 sm:px-20">
+              <div className="-inset-10 mr-6 ml-auto -mt-12 flex justify-end  py-4 sm:py-10 sm:px-20">
                 <button
                   className=" group flex h-40 w-40 flex-col items-end justify-center"
                   onClick={() => {
@@ -152,11 +152,11 @@ export default function Nav() {
                   />
                 </button>
               </div>
-              <div className="mb-6 ml-12 flex h-screen flex-col justify-end sm:ml-24 sm:mb-4">
+              <div className="mb-6 ml-12 flex h-screen flex-col justify-end sm:ml-36 sm:mb-4">
                 <motion.div>
                   <Link
                     href="/work"
-                    className="text-8xl font-bold text-black duration-700 hover:opacity-50 sm:text-9xl "
+                    className="text-8xl font-bold text-black duration-700 hover:opacity-50 sm:text-[150px]"
                     onClick={() => openModal(!modal)}
                   >
                     work
@@ -164,14 +164,14 @@ export default function Nav() {
                 </motion.div>
                 <Link
                   href="/about"
-                  className="text-8xl font-bold text-black duration-700 hover:opacity-50 sm:text-9xl"
+                  className="text-8xl font-bold text-black duration-700 hover:opacity-50 sm:text-[150px]"
                   onClick={() => openModal(!modal)}
                 >
                   about
                 </Link>
                 <Link
                   href="mailto:tom@tomcrampin.com"
-                  className="text-8xl font-bold text-black duration-700 hover:opacity-50 sm:text-9xl"
+                  className="text-8xl font-bold text-black duration-700 hover:opacity-50 sm:text-[150px]"
                   onClick={() => openModal(!modal)}
                 >
                   contact

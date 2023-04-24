@@ -7,11 +7,11 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Tom Crampin</title>
-        <meta name="description" content="Tom Crampin Website" />
+        <meta name="description" content="Tom Crampin" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <Nav />
-      <main className="absolute inset-0 z-[-1]">
+      <Nav />\
+      <div className="bg-video-wrap absolute inset-0 z-[-1]">
         <video
           className="h-full w-full bg-white object-cover"
           src="/toms_desk.mp4"
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           autoPlay
           preload="true"
         />
-      </main>
+      </div>
     </>
   );
 };

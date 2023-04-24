@@ -1,5 +1,5 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import Layout from "../components/Layout";
+
 import "~/styles/globals.css";
 import localFont from "next/font/local";
 import { AnimatePresence } from "framer-motion";
