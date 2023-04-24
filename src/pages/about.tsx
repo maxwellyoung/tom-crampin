@@ -12,7 +12,7 @@ export default function About() {
       </Head>
       <Nav />
       <div className="flex min-h-screen flex-col justify-center bg-white py-4 pt-28 text-black">
-        <main className="flex flex-1 flex-row justify-center px-10 sm:px-40  ">
+        <main className="flex flex-1 flex-row justify-center px-10 sm:px-32  ">
           <div className="text-left">
             <motion.div className="mt-16 flex justify-between">
               <p className="white text-md mt-3 w-3/12 sm:text-xl">
@@ -115,7 +115,9 @@ export default function About() {
               </p>
               <div className="w-9/12 ">
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{
+                    textDecoration: "line-through",
+                  }}
                   className="white mt-3 text-xl sm:text-6xl"
                   href="mailto:tom@tomcrampin.com"
                 >
@@ -123,7 +125,9 @@ export default function About() {
                 </motion.a>
                 <br />
                 <motion.a
-                  whileHover={{ opacity: 0.3 }}
+                  whileHover={{
+                    textDecoration: "line-through",
+                  }}
                   className="white mt-3 pb-28 text-3xl sm:text-6xl"
                   href="https://www.instagram.com/tomcrampin/"
                 >
