@@ -3,21 +3,21 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-function Logo() {
-  const router = useRouter();
-  const [color, setColor] = useState("#000000");
+interface Props {
+  color: string;
+}
 
-  useEffect(() => {
-    if (
-      router.pathname === "/" ||
-      router.pathname === "/foo" ||
-      router.pathname === "/bar"
-    ) {
-      setColor("#FFFFFF");
-    } else {
-      setColor("#000000");
-    }
-  }, [router.pathname]);
+export function Logo({ color }: Props) {
+  // const router = useRouter();
+  // const [color, setColor] = useState("#000000");
+
+  // useEffect(() => {
+  //   if (router.pathname === "/") {
+  //     setColor("#FFFFFF");
+  //   } else {
+  //     setColor("#000000");
+  //   }
+  // }, [router.pathname]);
 
   return (
     <Link href={"/"}>
@@ -50,11 +50,7 @@ export default function Nav() {
 
   const router = useRouter();
   useEffect(() => {
-    if (
-      router.pathname === "/" ||
-      router.pathname === "/foo" ||
-      router.pathname === "/bar"
-    ) {
+    if (router.pathname === "/") {
       setColor("#FFFFFF");
     } else {
       setColor("#000000");
@@ -80,7 +76,7 @@ export default function Nav() {
           whileTap={{ scale: 0.97 }}
           whileHover={{ scale: 1.03 }}
         >
-          <Logo />
+          <Logo color={color} />
         </motion.div>
       </Link>
       <motion.nav className="fixed top-0 w-full" transition={{ duration: 0.3 }}>
@@ -152,7 +148,7 @@ export default function Nav() {
                   />
                 </button>
               </div>
-              <div className="mb-6 ml-12 flex h-screen flex-col justify-end sm:ml-36 sm:mb-4">
+              <div className="mb-6 ml-4 flex h-screen flex-col justify-end sm:ml-36 sm:mb-4">
                 <motion.div>
                   <Link
                     href="/work"
