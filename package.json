@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
+    "@vimeo/player": "^2.19.0",
     "framer-motion": "^10.6.1",
     "next": "^13.2.1",
     "outline": "link:@heroicons/react/24/outline",

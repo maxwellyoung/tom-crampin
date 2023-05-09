@@ -8,17 +8,6 @@ interface Props {
 }
 
 export function Logo({ color }: Props) {
-  // const router = useRouter();
-  // const [color, setColor] = useState("#000000");
-
-  // useEffect(() => {
-  //   if (router.pathname === "/") {
-  //     setColor("#FFFFFF");
-  //   } else {
-  //     setColor("#000000");
-  //   }
-  // }, [router.pathname]);
-
   return (
     <Link href={"/"}>
       <motion.div whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.03 }}>
