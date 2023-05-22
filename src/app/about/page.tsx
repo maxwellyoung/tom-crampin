@@ -6,7 +6,7 @@ export default function About() {
 	return (
 		<>
 			<div className="flex  flex-col justify-center bg-white py-4 pt-28 text-black">
-				<div className="flex flex-1 flex-row justify-center px-10 sm:px-32  ">
+				<div className="flex flex-1 flex-row justify-center   sm:mx-32 mx-4">
 					<div className="text-left">
 						<motion.div className="mt-16 flex justify-between">
 							<p className="white text-md mt-3 w-3/12 sm:text-xl">
