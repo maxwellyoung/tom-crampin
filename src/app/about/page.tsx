@@ -50,42 +50,51 @@ export default function About() {
 								What do you do with it?
 							</p>
 							<p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
-								<a className="line-through" href="https://milk.co.nz/">
+								<a className="hover:line-through" href="https://milk.co.nz/">
 									Milk
 								</a>
 								<br />
-								<a className="line-through" href="https://designworks.com/">
+								<a
+									className="hover:line-through"
+									href="https://designworks.com/"
+								>
 									Designworks
 								</a>
 								<br />
 								<a
-									className="line-through"
+									className="hover:line-through"
 									href="https://www.studiosouth.co.nz/"
 								>
 									Studio South
 								</a>
 								<br />
-								<a className="line-through" href="https://www.mccarthy.studio/">
+								<a
+									className="hover:line-through"
+									href="https://www.mccarthy.studio/"
+								>
 									McCarthy Studio
 								</a>
 								<br />
 								<a
-									className="line-through"
+									className="hover:line-through"
 									href="https://www.hellolikeminds.co.nz/"
 								>
 									Likeminds
 								</a>
 								<br />
-								<a className="line-through" href="https://heyyou.co/">
+								<a className="hover:line-through" href="https://heyyou.co/">
 									HeyYou
 								</a>
 								<br />
-								<a className="line-through" href="https://sussudio.co.nz/">
+								<a
+									className="hover:line-through"
+									href="https://sussudio.co.nz/"
+								>
 									Sussudio
 								</a>
 								<br />
 								<a
-									className="line-through"
+									className="hover:line-through"
 									href="https://www.workgroupstudio.com/"
 								>
 									WorkGroup
@@ -99,14 +108,14 @@ export default function About() {
 							</p>
 							<div className="w-9/12 ">
 								<a
-									className="white mt-3 text-xl sm:text-6xl line-through"
+									className="white mt-3 text-xl sm:text-6xl hover:line-through"
 									href="mailto:tom@tomcrampin.com"
 								>
 									tom@tomcrampin.com
 								</a>
 								<br />
 								<a
-									className="white mt-3 pb-28 text-3xl sm:text-6xl line-through"
+									className="white mt-3 pb-28 text-3xl sm:text-6xl hover:line-through"
 									href="https://www.instagram.com/tomcrampin/"
 								>
 									Instagram
