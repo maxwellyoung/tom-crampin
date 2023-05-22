@@ -5,7 +5,6 @@ import './globals.css'
 import localFont from 'next/font/local'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { motion } from 'framer-motion'
 
 const ppMori = localFont({ src: '/assets/PPMori.otf' })
@@ -109,8 +108,8 @@ export default function RootLayout({
 							onClick={() => setIsModalOpen(true)} // Open the modal by setting isModalOpen to true
 						>
 							{/* SVG lines */}
-							<line y1="3" x2="29" y2="3" stroke={color} stroke-width="6" />
-							<line y1="15" x2="29" y2="15" stroke={color} stroke-width="6" />
+							<line y1="3" x2="29" y2="3" stroke={color} strokeWidth="6" />
+							<line y1="15" x2="29" y2="15" stroke={color} strokeWidth="6" />
 						</motion.svg>
 					)}
 				</div>

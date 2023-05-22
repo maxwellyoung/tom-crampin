@@ -1,3 +1,14 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'Tom Crampin | Work',
+	description: 'Tom Crampin. Motion designer based in Auckland, New Zealand',
+	keywords:
+		'motion design, creative, new zealand, auckland, artist, sound design, creative',
+	creator: 'Maxwell Young',
+	referrer: 'origin-when-cross-origin',
+}
+
 export default function Work() {
 	return (
 		<>
