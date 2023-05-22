@@ -50,13 +50,20 @@ export default function About() {
 								What do you do with it?
 							</p>
 							<p className="white mt-3 w-9/12 text-3xl sm:text-6xl">
-								<a className="hover:line-through" href="https://milk.co.nz/">
+								<a
+									className="hover:line-through"
+									href="https://milk.co.nz/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 									Milk
 								</a>
 								<br />
 								<a
 									className="hover:line-through"
 									href="https://designworks.com/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									Designworks
 								</a>
@@ -64,6 +71,8 @@ export default function About() {
 								<a
 									className="hover:line-through"
 									href="https://www.studiosouth.co.nz/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									Studio South
 								</a>
@@ -71,6 +80,8 @@ export default function About() {
 								<a
 									className="hover:line-through"
 									href="https://www.mccarthy.studio/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									McCarthy Studio
 								</a>
@@ -78,17 +89,26 @@ export default function About() {
 								<a
 									className="hover:line-through"
 									href="https://www.hellolikeminds.co.nz/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									Likeminds
 								</a>
 								<br />
-								<a className="hover:line-through" href="https://heyyou.co/">
+								<a
+									className="hover:line-through"
+									href="https://heyyou.co/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 									HeyYou
 								</a>
 								<br />
 								<a
 									className="hover:line-through"
 									href="https://sussudio.co.nz/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									Sussudio
 								</a>
@@ -96,6 +116,8 @@ export default function About() {
 								<a
 									className="hover:line-through"
 									href="https://www.workgroupstudio.com/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									WorkGroup
 								</a>
@@ -110,6 +132,8 @@ export default function About() {
 								<a
 									className="white mt-3 text-xl sm:text-6xl hover:line-through"
 									href="mailto:tom@tomcrampin.com"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									tom@tomcrampin.com
 								</a>
@@ -117,6 +141,8 @@ export default function About() {
 								<a
 									className="white mt-3 pb-28 text-3xl sm:text-6xl hover:line-through"
 									href="https://www.instagram.com/tomcrampin/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									Instagram
 								</a>
