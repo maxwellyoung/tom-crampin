@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function About() {
 	return (
 		<>
-			<div className="flex  flex-col justify-center bg-white sm:py-4 pt-0 sm:pt-28 text-black">
+			<div className="flex selection:bg-black selection:text-white flex-col justify-center bg-white sm:py-4 pt-0 sm:pt-28 text-black">
 				<div className="flex flex-1 flex-row justify-center  sm:mx-32 mx-4">
 					<div className="text-left">
 						<div className=" flex justify-between">
