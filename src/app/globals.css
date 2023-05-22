@@ -10,3 +10,7 @@
 	font-family: 'PPMori';
 	src: url('/assets/PPMori.otf') format('opentype') !important;
 }
+
+.video-container {
+	transition: width 0.5s, height 0.5s;
+}

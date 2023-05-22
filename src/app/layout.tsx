@@ -70,7 +70,8 @@ export default function RootLayout({
 
 					{isModalOpen ? (
 						<>
-							<svg
+							<motion.svg
+								whileHover={{ scale: 0.9 }}
 								width="29"
 								height="29" // Adjust the height to fit the SVG lines
 								viewBox="0 0 25 25" // Adjust the viewBox to fit the SVG lines
@@ -95,10 +96,11 @@ export default function RootLayout({
 									stroke={color}
 									strokeWidth="6" // Use "strokeWidth" instead of "stroke-width"
 								/>
-							</svg>
+							</motion.svg>
 						</>
 					) : (
-						<svg
+						<motion.svg
+							whileHover={{ scale: 0.9 }}
 							width="25"
 							height="26"
 							viewBox="0 0 25 26"
@@ -109,7 +111,7 @@ export default function RootLayout({
 							{/* SVG lines */}
 							<line y1="3" x2="29" y2="3" stroke={color} stroke-width="6" />
 							<line y1="15" x2="29" y2="15" stroke={color} stroke-width="6" />
-						</svg>
+						</motion.svg>
 					)}
 				</div>
 
