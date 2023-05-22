@@ -5,6 +5,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { motion } from 'framer-motion'
 
 const ppMori = localFont({ src: '/assets/PPMori.otf' })
@@ -14,7 +15,7 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const [color, setColor] = useState('#000000')
+	const [color, setColor] = useState('#FFFFFF')
 	const pathname = usePathname()
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
