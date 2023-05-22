@@ -47,7 +47,7 @@ export default function RootLayout({
 							width="300"
 							height="100"
 							style={{ fill: color }}
-							className="z-10 sm:w-auto w-2/3"
+							className="z-10 sm:w-auto w-3/3"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 1057.4 155.5"
 							onClick={() => setIsModalOpen(false)}
@@ -118,7 +118,7 @@ export default function RootLayout({
 							<motion.div>
 								<Link
 									href="/work"
-									className="text-9xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
+									className="text-8xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
 									onClick={() => setIsModalOpen(false)}
 								>
 									work
@@ -126,14 +126,14 @@ export default function RootLayout({
 							</motion.div>
 							<Link
 								href="/about"
-								className="text-9xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
+								className="text-8xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
 								onClick={() => setIsModalOpen(false)}
 							>
 								about
 							</Link>
 							<Link
 								href="mailto:tom@tomcrampin.com"
-								className="text-9xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
+								className="text-8xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
 								onClick={() => setIsModalOpen(false)}
 							>
 								contact
