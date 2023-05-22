@@ -5,6 +5,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const ppMori = localFont({ src: '/assets/PPMori.otf' })
 
@@ -39,14 +40,14 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="antialiased">
 			<body className={ppMori.className}>
-				<div className="flex items-center justify-between h-1/4 mx-10 space-6">
+				<div className="flex items-center justify-between h-1/4  space-6  sm:ml-32 ml-4">
 					<Link href="/">
 						<svg
 							id="Layer_1"
 							width="300"
 							height="100"
 							style={{ fill: color }}
-							className="z-10"
+							className="z-10 sm:w-auto w-2/3"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 1057.4 155.5"
 							onClick={() => setIsModalOpen(false)}
@@ -73,7 +74,7 @@ export default function RootLayout({
 								height="29" // Adjust the height to fit the SVG lines
 								viewBox="0 0 25 25" // Adjust the viewBox to fit the SVG lines
 								xmlns="http://www.w3.org/2000/svg"
-								className="z-10 cursor-pointer"
+								className="z-10 cursor-pointer sm:mr-32 mr-4"
 								onClick={() => setIsModalOpen(false)} // Close the modal by setting isModalOpen to false
 							>
 								{/* SVG lines */}
@@ -101,7 +102,7 @@ export default function RootLayout({
 							height="26"
 							viewBox="0 0 25 26"
 							xmlns="http://www.w3.org/2000/svg"
-							className="z-10 cursor-pointer"
+							className="z-10 cursor-pointer sm:mr-32 mr-4"
 							onClick={() => setIsModalOpen(true)} // Open the modal by setting isModalOpen to true
 						>
 							{/* SVG lines */}
@@ -113,8 +114,8 @@ export default function RootLayout({
 
 				{isModalOpen ? (
 					<div className="">
-						<div className="modal-content flex flex-col text-9xl justify-end  sm:text-[150px] font-bold">
-							{/* Render the links and other content for the modal */}
+						{/* <div className="modal-content flex flex-col text-9xl justify-end  sm:text-[150px] font-bold">
+							
 							<a
 								href="/work"
 								className="modal-link duration-700 hover:opacity-50 "
@@ -133,6 +134,31 @@ export default function RootLayout({
 							>
 								contact
 							</a>
+						</div> */}
+						<div className="modal-content font-medium mb-6 ml-4 flex h-screen flex-col justify-end pb-28 sm:ml-32 sm:mb-4">
+							<motion.div>
+								<Link
+									href="/work"
+									className="text-7xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
+									onClick={() => setIsModalOpen(false)}
+								>
+									work
+								</Link>
+							</motion.div>
+							<Link
+								href="/about"
+								className="text-7xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
+								onClick={() => setIsModalOpen(false)}
+							>
+								about
+							</Link>
+							<Link
+								href="mailto:tom@tomcrampin.com"
+								className="text-7xl  text-black duration-700 hover:opacity-50 sm:text-[150px]"
+								onClick={() => setIsModalOpen(false)}
+							>
+								contact
+							</Link>
 						</div>
 					</div>
 				) : (
