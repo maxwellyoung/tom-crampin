@@ -40,7 +40,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="antialiased">
 			<body className={ppMori.className}>
-				<div className="flex items-center justify-between h-1/4  space-6  sm:ml-32 ml-4">
+				<header className="flex items-center justify-between h-1/4  space-6  sm:ml-32 ml-4">
 					<Link href="/">
 						<svg
 							id="Layer_1"
@@ -110,7 +110,7 @@ export default function RootLayout({
 							<line y1="15" x2="29" y2="15" stroke={color} strokeWidth="6" />
 						</motion.svg>
 					)}
-				</div>
+				</header>
 
 				{isModalOpen ? (
 					<div>
